@@ -1,15 +1,20 @@
 body {
     background-image: url("/media/curioUI.png");
-    background-size: 75%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position-x: center;
     background-color: #8e8e8e;
 }
 
 #window{
-    width:35.5%;
+    width:40.2%;
     height:auto;
     position: absolute;
-    top:315px;
-    left:464px;
+    top:295px;
+    left:440px;
+}
+
+.avatar {
+    display:none;
+    border-color: #99509f;
 }
