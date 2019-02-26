@@ -34,12 +34,12 @@ function init() {
     var onError = function () { };
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     new THREE.MTLLoader()
-        .setPath( '/media/' )
+        .setPath( './media/' )
         .load( 'Alyssa2.mtl', function ( materials ) {
             materials.preload();
             new THREE.OBJLoader()
                 .setMaterials( materials )
-                .setPath( '/media/' )
+                .setPath( './media/' )
                 .load( 'Alyssa2.obj', function ( object ) {
                     object.position.y = - 70;
                     object.rotateY(160);

@@ -34,12 +34,12 @@ function init() {
     var onError = function () { };
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     new THREE.MTLLoader()
-        .setPath( '/media/' )
+        .setPath( './media/' )
         .load( 'roomPreset.mtl', function ( materials ) {
             materials.preload();
             new THREE.OBJLoader()
                 .setMaterials( materials )
-                .setPath( '/media/' )
+                .setPath( './media/' )
                 .load( 'RoomPreset.obj', function ( object ) {
                     object.position.y = - 25;
                     scene.add( object );
