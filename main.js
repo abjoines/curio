@@ -39,11 +39,13 @@ function init() {
 
     // lights
     var ambientLight = new THREE.AmbientLight( 0x404040 , 1 );
+    var ambientLight2 = new THREE.AmbientLight( 0x404040 , 1.7 );
+    scene.add( ambientLight2 );
     scene.add( ambientLight );
 
-    var pointLight = new THREE.PointLight( 0xffffff, 0.5 );
-    scene.add( ambientLight );
+    var pointLight = new THREE.PointLight( 0xffffff, 0.1 );
     camera.add( pointLight );
+
 
     // models
     var onProgress = function ( xhr ) {
@@ -76,9 +78,9 @@ function init() {
                 .setMaterials( materials )
                 .setPath( './media/' )
                 .load( 'Alyssa2.obj', function ( object ) {
-                    object.position.y = - 33.5;
+                    object.position.y = - 32.5;
                     object.rotateY(160);
-                    object.scale.set(3,3,3);
+                    object.scale.set(2.7,2.7,2.7);
                     scene.add( object );
                 }, onProgress, onError );
         } );
@@ -92,8 +94,8 @@ function init() {
                 .setMaterials( materials )
                 .setPath( './media/' )
                 .load( 'Andy2.obj', function ( object ) {
-                    object.position.y = - 34.5;
-                    object.position.x = -30;
+                    object.position.y = - 35;
+                    object.position.x = -10;
                     object.rotateY(180);
                     object.scale.set(3,3,3);
                     scene.add( object );

@@ -18,8 +18,10 @@ function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color( 0x8e8e8e );
     var ambientLight = new THREE.AmbientLight( 0x404040 , 1 );
+    var ambientLight2 = new THREE.AmbientLight( 0x404040 , 3 );
+    scene.add( ambientLight2 );
     scene.add( ambientLight );
-    var pointLight = new THREE.PointLight( 0xffffff, 1 );
+    var pointLight = new THREE.PointLight( 0xffffff, 0.1 );
     scene.add( ambientLight );
     camera.add( pointLight );
     scene.add( camera );
