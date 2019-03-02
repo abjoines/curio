@@ -27,16 +27,6 @@ function init() {
     camera.position.z = 200;
     scene.add( camera );
 
-    // controls
-    // controls = new THREE.TrackballControls( camera );
-	// 			controls.rotateSpeed = 1.0;
-	// 			controls.zoomSpeed = 1.2;
-	// 			controls.panSpeed = 0.8;
-	// 			controls.noZoom = false;
-	// 			controls.noPan = false;
-	// 			controls.staticMoving = true;
-	// 			controls.dynamicDampingFactor = 0.3;
-
     // lights
     var ambientLight = new THREE.AmbientLight( 0x404040 , 1 );
     var ambientLight2 = new THREE.AmbientLight( 0x404040 , 1.7 );
@@ -104,7 +94,40 @@ function init() {
 
     document.addEventListener( 'mousemove', onDocumentMouseMove, false );
     window.addEventListener( 'resize', onWindowResize, false );
+    document.addEventListener( "click", popUp, false);
+    document.addEventListener( 'keydown', onDocumentKeyDown, false);
 
+}
+
+function popUp() {
+
+    THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+    new THREE.MTLLoader()
+        .setPath( './media/' )
+        .load( 'Andy2.mtl', function ( materials ) {
+            materials.preload();
+            new THREE.OBJLoader()
+                .setMaterials( materials )
+                .setPath( './media/' )
+                .load( 'Andy2.obj', function ( object ) {
+                    object.position.y = - 35;
+                    object.position.x = -20;
+                    object.rotateY(180);
+                    object.scale.set(3,3,3);
+                    scene.add( object );
+                })
+        }) 
+}
+
+function onDocumentKeyDown (event) {
+    var KeyCode = event.which;
+    //zoom in
+    if (KeyCode == 38){
+        (camera.position.z -= 10) * 0.5;
+    //zoom out
+    } else if (KeyCode == 40){
+        (camera.position.z += 10) * 0.5;
+    }
 }
 
 function onWindowResize() {
@@ -119,13 +142,12 @@ function onDocumentMouseMove( event ) {
     mouseY = ( event.clientY - midY ) / 2;
 }
 
-
 function animate() {
     requestAnimationFrame( animate );
     render();
 }
+
 function render() {
-    // controls.update();
     camera.position.x += ( - mouseX/2 - camera.position.x ) * 0.5;
     camera.position.y += ( mouseY/2 - camera.position.y ) * 0.5;
     camera.lookAt( scene.position );

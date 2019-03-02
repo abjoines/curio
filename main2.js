@@ -71,7 +71,6 @@ function init() {
         mouseX = ( event.clientX - windowHalfX ) / 2;
         mouseY = ( event.clientY - windowHalfY ) / 2;
     }
-    //
     
     function animate() {
         requestAnimationFrame( animate );
