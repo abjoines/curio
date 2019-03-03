@@ -1,35 +1,41 @@
-body {
-    /* background-image: url("/media/filler.png");
-    background-size: 90%;
-    background-repeat: no-repeat;
-    background-position-x: center; */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
-    background-color:#8e8e8e;
+span {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+img.messenger {
+    padding-top: 20px;
+    width: auto;
+    height: 625px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color:#a0d39f;
     font-family: Monospace;
     color: #fff;
     margin: 0px;
     overflow: hidden;
 }
 
-li {
+li.nav {
+    font-family: 'Quicksand', sans-serif;
     display: inline;
     background-color: #99509f;
     padding: 20px;
 }
 
-ul {
+ul.nav {
     margin-left:auto;
     margin-right:auto;
     max-width:800px;
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.info {
-    display: inline block;
-    background-color: #99509f;
-    padding: 20px;
 }
 
 .nav {
@@ -39,6 +45,7 @@ ul {
 }
 
 a {
+    font-family: 'Quicksand', sans-serif;
     color: white;
     text-decoration: none;
 }

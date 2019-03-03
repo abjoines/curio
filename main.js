@@ -20,7 +20,7 @@ function init() {
 
     // scene
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0x8e8e8e );
+    scene.background = new THREE.Color( 0xa0d39f );
 
     // camera
     camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 1000 );
@@ -45,6 +45,8 @@ function init() {
         }
     };
     var onError = function () { };
+
+    //OFFICE
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     new THREE.MTLLoader()
         .setPath( './media/' )
@@ -55,10 +57,12 @@ function init() {
                 .setPath( './media/' )
                 .load( 'RoomPresetTRY2.obj', function ( object ) {
                     object.position.y = - 25;
+                    object.position.x = -2;
                     scene.add( object );
                 }, onProgress, onError );
         } );
 
+    //ALYSSA
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     new THREE.MTLLoader()
         .setPath( './media/' )
@@ -75,6 +79,7 @@ function init() {
                 }, onProgress, onError );
         } );
 
+    //ANDY
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     new THREE.MTLLoader()
         .setPath( './media/' )
@@ -92,29 +97,46 @@ function init() {
                 }, onProgress, onError );
         } );
 
-    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-    window.addEventListener( 'resize', onWindowResize, false );
-    document.addEventListener( "click", popUp, false);
-    document.addEventListener( 'keydown', onDocumentKeyDown, false);
-
-}
-
-function popUp() {
-
+    //JO
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     new THREE.MTLLoader()
         .setPath( './media/' )
-        .load( 'Andy2.mtl', function ( materials ) {
+        .load( 'JoTry1.mtl', function ( materials ) {
             materials.preload();
             new THREE.OBJLoader()
                 .setMaterials( materials )
                 .setPath( './media/' )
-                .load( 'Andy2.obj', function ( object ) {
-                    object.position.y = - 35;
-                    object.position.x = -20;
-                    object.rotateY(180);
+                .load( 'JoTry1.obj', function ( object ) {
+                    object.position.y = - 33.3;
+                    object.position.x = 10;
+                    object.rotateY(100);
                     object.scale.set(3,3,3);
                     scene.add( object );
+                }, onProgress, onError );
+        } );
+
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    window.addEventListener( 'resize', onWindowResize, false );
+    document.addEventListener( "click", popUp, false);
+    document.addEventListener( 'keydown', onDocumentKeyDown, false);
+}
+
+function popUp() {
+    THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+    new THREE.MTLLoader()
+    .setPath( './media/' )
+    .load( 'MENU.mtl', function ( materials ) {
+        materials.preload();
+        new THREE.OBJLoader()
+            .setMaterials( materials )
+            .setPath( './media/' )
+            .load( 'MENU.obj', function ( object ) {
+                object.position.y = -8;
+                object.position.x = -13;
+                object.position.z = 3;
+                object.rotateY(0);
+                object.scale.set(1.4,1.4,1.4);
+                scene.add( object );
                 })
         }) 
 }
