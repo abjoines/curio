@@ -4,8 +4,10 @@ body {
 
 #window{
     display: block;
-    width: 70%;
+    width: 80%;
     height: auto;
+    margin-top:auto;
+    margin-bottom:auto;
     margin-left: auto;
     margin-right: auto;
 }
