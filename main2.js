@@ -36,7 +36,7 @@ function init() {
     var pointLight = new THREE.PointLight( 0xffffff, 0.1 );
     camera.add( pointLight );
 
-    // Profile IMG
+    // // Profile IMG
     var spriteMap = new THREE.TextureLoader().load( "./media/messaging.png" );
     var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
     var sprite = new THREE.Sprite( spriteMaterial );
