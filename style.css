@@ -1,22 +1,64 @@
-body {
-    background-color: #8e8e8e;
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+span {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
 }
 
-#window{
-    display: block;
-    width: 70%;
-    height: auto;
-    margin-top:auto;
-    margin-bottom:auto;
-    margin-left: auto;
+img.messenger {
+    padding-top: 20px;
+    width: auto;
+    height: 625px;
+    margin-left:auto;
     margin-right: auto;
 }
 
-.avatar {
-    display:none;
-    border-color: #99509f;
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color:#a0d39f;
+    font-family: Monospace;
+    color: #fff;
+    margin: 0px;
+    overflow: hidden;
 }
 
-a.hover{
+li.nav {
+    font-family: 'Quicksand', sans-serif;
+    display: inline;
+    background-color: #99509f;
+    padding: 20px;
+}
+
+ul.nav {
+    margin-left:auto;
+    margin-right:auto;
+    max-width:800px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    display: inline block;
+    background-color: #99509f;
+    padding: 20px;
+}
+
+a {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
     text-decoration: underline;
+}
+
+.avi {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    padding:20px;
 }

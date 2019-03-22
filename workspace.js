@@ -65,7 +65,7 @@ function init() {
     THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     new THREE.MTLLoader()
         .setPath( './media/' )
-        .load( 'roomPresetTRY2.mtl', function ( materials ) {
+        .load( 'RoomPresetTRY2.mtl', function ( materials ) {
             materials.preload();
             new THREE.OBJLoader()
                 .setMaterials( materials )
